@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Assistant</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">◈</span>
+      <span class="brand-text">Research<strong>Assistant</strong></span>
+    </div>
+
+    <div class="panel">
+      <h3>Documents</h3>
+      <label class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" accept="application/pdf" multiple hidden>
+        <span class="upload-icon">⇪</span>
+        <span>Drop PDFs or click to upload</span>
+      </label>
+      <ul class="source-list" id="sourceList"></ul>
+      <div class="stat-line" id="statLine">0 chunks indexed</div>
+    </div>
+
+    <div class="panel">
+      <h3>Keyword Search</h3>
+      <div class="search-row">
+        <input type="text" id="keywordInput" placeholder="e.g. Transformers">
+        <button id="keywordBtn">Go</button>
+      </div>
+      <ul class="keyword-results" id="keywordResults"></ul>
+    </div>
+
+    <div class="panel">
+      <button class="ghost-btn" id="clearBtn">Clear all data</button>
+      <button class="ghost-btn" id="themeBtn">Toggle theme</button>
+    </div>
+  </aside>
+
+  <main class="chat-area">
+    <div class="messages" id="messages">
+      <div class="msg assistant">
+        <div class="bubble">
+          Upload research papers on the left, then ask me anything about them.
+          I'll answer using only your documents and cite the source pages.
+        </div>
+      </div>
+    </div>
+
+    <form class="composer" id="composer">
+      <button type="button" id="micBtn" title="Voice input">🎙</button>
+      <input type="text" id="questionInput" placeholder="Ask a question about your papers..." autocomplete="off">
+      <button type="submit" id="sendBtn">Ask</button>
+    </form>
+  </main>
+
+</div>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>
